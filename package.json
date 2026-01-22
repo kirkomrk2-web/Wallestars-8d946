@@ -4,6 +4,10 @@
   "description": "Professional platform for Claude AI control on Linux and Android with beautiful real-time visualization",
   "main": "server/index.js",
   "type": "module",
+  "bin": {
+    "claude": "./cli/index.js",
+    "claude-teleport": "./cli/index.js"
+  },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/index.js",
@@ -13,7 +17,9 @@
     "start": "node server/index.js",
     "test": "echo \"Tests will be added\" && exit 0",
     "validate-env": "node validate-env.js",
-    "prestart": "node validate-env.js"
+    "prestart": "node validate-env.js",
+    "cli": "node cli/index.js",
+    "teleport": "node cli/index.js --teleport"
   },
   "keywords": [
     "claude",
